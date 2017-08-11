@@ -14,6 +14,9 @@ body{
       font-size: 18px;
       font-weight: 600;
       user-select: none;
+      padding: 0;
+      margin: 0;
+      border: none;
       .header-info{
         margin: 0 310px 0 50px;
       }
@@ -44,6 +47,8 @@ body{
           user-select: none;
           height: 55px;
           transition: height .5s ease-out;
+          font-weight: 400;
+          margin:0;
           .voucher-info{
             display: flex;
             flex-direction: column;
@@ -153,6 +158,80 @@ body{
           &.expanded{
             height: 135px;
             transition: height .5s ease-in;
+          }
+        }
+      }
+    }
+  }
+  .editVoucherModal{
+    .modal-dialog{
+      width:80vw;
+      .edit-page{
+        position: relative;
+        padding: 20px;
+        .fields-container{
+          display: flex;
+          flex-direction: column;
+          .field-pair{
+            display: flex;
+            margin: 10px;
+            label{
+              font-weight: 600;
+              width: 150px;
+              color: #2C2C2C;
+              user-select: none;
+            }
+            input[type="checkbox"] {
+              display: none;
+            }
+            input[type="checkbox"] + label:after{
+              position: absolute;
+              display: inline-flex;
+              justify-content: center;
+              align-items: center;
+              content:'\00a0';
+              width: 16px;
+              height: 16px;
+              border: 1px solid #dbdbdb;
+              border-radius: 3px;
+              margin: 2px 0 0 51px;
+            }
+            input[type="checkbox"]:checked + label:after{
+              //background: #fff;
+              color: #333;
+              content: "\2713";
+            }
+            .edit-input{
+              border: 1px solid black;
+              width: 150px;
+              font-weight: 400;
+            }
+            .no-edit-input{
+              border: none;
+              color: #797979;
+              width: 70%;
+            }
+          }
+        }
+        .action-btns{
+          position: absolute;
+          top:25px;
+          right: 40px;
+          display: flex;
+          .action-btn{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            width: 70px;
+            height: 50px;
+            color: #FFFFFF;
+            font-weight: 600;
+            margin: 0 5px;
+            background: #FC2355;
+            &:nth-child(1){
+              background: #3A9AF1;
+            }
           }
         }
       }

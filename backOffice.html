@@ -4,9 +4,12 @@
   <meta charset="UTF-8">
   <title>Back Office</title>
   <link rel="stylesheet" href="style.css" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css">
   <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.9/angular.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.9/angular-animate.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min.js"></script>
   <script src="backOffice.js"></script>
 </head>
 <body ng-app="backOfficeApp">
@@ -55,7 +58,7 @@
             <div class="info-entry"><span>ID: </span>{{voucher.id}}</div>
           </div>
         </div>
-        <div class="edit-voucher">
+        <div class="edit-voucher" ng-click="editVoucher(voucher, $event)">
           <!--<img ng-src="./images/edit.svg" onerror="angular.element(this).scope().imgError(this)"/>-->
           <svg width="20" height="20"  viewBox="0 0 40 40">
             <g fill="none" fill-rule="evenodd">

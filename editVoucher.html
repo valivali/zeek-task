@@ -1,0 +1,48 @@
+<div class="edit-page">
+  <div class="fields-container">
+    <div class="field-pair">
+      <label for="owner_{{vouch.sid}}">Owner</label>
+      <input type="text" class="edit-input" id="owner_{{vouch.sid}}" ng-model="vouch.seller" value="vouch.seller"/>
+    </div>
+    <div class="field-pair">
+      <label for="prev_owner_{{vouch.sid}}">Previous Owner</label>
+      <input type="text" class="no-edit-input" id="prev_owner_{{vouch.sid}}" ng-model="vouch.prevOwner" readonly="readonly"/>
+    </div>
+    <div class="field-pair">
+      <label for="serial_{{vouch.sid}}">Serial</label>
+      <input type="text" class="edit-input" id="serial_{{vouch.sid}}" ng-model="vouch.sn" value="vouch.sn" numbers-only ng-trim="false"/>
+    </div>
+    <div class="field-pair">
+      <input type="checkbox" class="edit-input" id="pv_{{vouch.sid}}" ng-model="vouch.pVoucher" />
+      <label for="pv_{{vouch.sid}}">Paper Voucher</label>
+    </div>
+    <div class="field-pair">
+      <label for="cvv_{{vouch.sid}}">CVV</label>
+      <input type="text" class="edit-input" ng-class="{'no-edit-input':!vouch.pVoucher}" id="cvv_{{vouch.sid}}" ng-model="vouch.cvv" value="vouch.cvv" ng-readonly="!vouch.pVoucher" numbers-only ng-trim="false"/>
+    </div>
+    <div class="field-pair">
+      <label for="bulk_{{vouch.sid}}">Bulk Id</label>
+      <input type="text" class="no-edit-input" id="bulk_{{vouch.sid}}" ng-model="vouch.bID" readonly="readonly"/>
+    </div>
+    <div class="field-pair">
+      <label for="invoice_{{vouch.sid}}">Invoice Number</label>
+      <input type="text" class="no-edit-input" id="invoice_{{vouch.sid}}" ng-model="vouch.invoice" readonly="readonly"/>
+    </div>
+    <div class="field-pair">
+      <label for="orderNum_{{vouch.sid}}">Order Number</label>
+      <input type="text" class="no-edit-input" id="orderNum_{{vouch.sid}}" ng-model="vouch.orderNum" readonly="readonly"/>
+    </div>
+    <div class="field-pair">
+      <label for="brand_{{vouch.sid}}">Brand</label>
+      <input type="text" class="edit-input" id="brand_{{vouch.sid}}" ng-model="vouch.brandName" value="vouch.brandName"/>
+    </div>
+    <div class="field-pair">
+      <label for="status_{{vouch.sid}}">Status</label>
+      <input type="text" class="no-edit-input" id="status_{{vouch.sid}}" ng-model="vouch.status" readonly="readonly"/>
+    </div>
+  </div>
+  <div class="action-btns">
+    <div class="action-btn" ng-click="approve()">Approve</div>
+    <div class="action-btn" ng-click="decline()">Decline</div>
+  </div>
+</div>
