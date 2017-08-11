@@ -48,7 +48,7 @@ body{
             display: flex;
             flex-direction: column;
             height: inherit;
-            justify-content: space-between;
+            justify-content: flex-start;
             .voucher-info-short{
               display: flex;
               align-items: flex-start;
@@ -91,7 +91,7 @@ body{
             .voucher-info-expanded{
               display: flex;
               flex-direction: column;
-              margin: 0 0 0 40px;
+              margin: 5px 0 0 40px;
               .info-entry {
                 display: flex;
                 font-size: 14px;
@@ -118,30 +118,40 @@ body{
             flex-direction: column;
             align-items: center;
           }
-          .action-btns{
+          .action-container{
             position: absolute;
             display: flex;
-            align-items: center;
+            flex-direction: column;
             right: 10px;
             height: inherit;
-            .action-btn{
+            .action-btns{
               display: flex;
-              justify-content: center;
               align-items: center;
-              cursor: pointer;
-              width: 70px;
-              height: 50px;
-              color: #FFFFFF;
-              font-weight: 600;
-              margin: 0 5px;
-              background: #FC2355;
-              &:nth-child(1){
-                background: #3A9AF1;
+              justify-content: flex-end;
+              .action-btn{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                width: 70px;
+                height: 50px;
+                color: #FFFFFF;
+                font-weight: 600;
+                margin: 0 5px;
+                background: #FC2355;
+                &:nth-child(1){
+                  background: #3A9AF1;
+                }
               }
+            }
+            .note{
+              width:253px;
+              height:70px;
+              margin: 10px 0 0
             }
           }
           &.expanded{
-            height: 93px;
+            height: 135px;
             transition: height .5s ease-in;
           }
         }

@@ -75,9 +75,12 @@
           <div class="discount">({{calcDiscount(voucher.fVal,voucher.discount)}}%)</div>
         </div>
         <div class="seller-name">{{voucher.seller}}</div>
-        <div class="action-btns">
-          <div class="action-btn">Approve</div>
-          <div class="action-btn">Decline</div>
+        <div class="action-container">
+          <div class="action-btns">
+            <div class="action-btn">Approve</div>
+            <div class="action-btn">Decline</div>
+          </div>
+          <textarea class="note" ng-model="voucher.notes" ng-show="chosenVoucher.selected.sid===voucher.sid"></textarea>
         </div>
       </label>
     </div>
