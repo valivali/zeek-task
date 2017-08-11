@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Back Office</title>
+  <link rel="stylesheet" href="style.css" type="text/css">
+  <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.9/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.9/angular-animate.min.js"></script>
+  <script src="backOffice.js"></script>
+</head>
+<body ng-app="backOfficeApp">
+<div class="back-office-page" ng-controller="backOfficeCtrl">
+  <div class="page-header">
+    <span class="header-info" ng-click="orderByCol='-brandName'; reverseSort=!reverseSort">Info</span>
+    <span class="header-FV" ng-click="orderByCol='-fVal'; reverseSort=!reverseSort">Face Value</span>
+    <span class="header-AP" >Asking Price</span>
+    <span class="header-seller" ng-click="orderByCol='-seller'; reverseSort=!reverseSort">Seller</span>
+  </div>
+  <div class="content-container">
+    <div class="table-item" ng-repeat="voucher in voucherList | orderBy:orderByCol:reverseSort">
+      <input type="checkbox" ng-model="chosenVoucher.selected" ng-true-value="{{voucher}}" ng-false-value="" id="v_{{$index}}"/>
+      <label for="v_{{$index}}" class="voucher-row" ng-class="{'expanded':chosenVoucher.selected.sid===voucher.sid}">
+        <div class="voucher-info">
+          <div class="voucher-info-short">
+            <div class="img-wrapper">
+              <img ng-src="{{voucher.brandImg}}"/>
+            </div>
+            <div class="voucher-info-text">
+              <div class="info-entry">{{voucher.brandName}}</div>
+              <div class="info-entry">
+                <span>S/N: </span>{{voucher.sn}}
+                <span class="copy-svg">
+                  <svg width="20" height="20" viewBox="0 0 20 20">
+                    <path d="M14.71 2H8.497C7.688 2 7 2.557 7 3.367V4h1v-.633C8 3.109 8.239 3 8.497 3h6.213c.258 0 .29.109.29.367v9.729c0 .258-.032.904-.29.904H14v1h.71c.81 0 1.29-1.095 1.29-1.904V3.367C16 2.557 15.52 2 14.71 2z"/>
+                    <path d="M12.27 17.668H5.728c-.852 0-1.545-.694-1.545-1.546V5.878c0-.852.693-1.545 1.545-1.545h6.542c.852 0 1.545.693 1.545 1.545v10.243c.001.853-.692 1.547-1.545 1.547zM5.728 5.386c-.271 0-.493.221-.493.493v10.243c0 .272.221.494.493.494h6.542c.271 0 .493-.221.493-.494V5.878c0-.271-.221-.493-.493-.493H5.728z"/>
+                    <path d="M6.237 7.599h5.526v.502H6.237zm0 1.05h5.526v.502H6.237zm0 1.05h5.526v.502H6.237zm0 1.05h5.526v.502H6.237zm0 1.051h5.526v.502H6.237zm0 1.05h5.526v.502H6.237zm0 1.05h5.526v.502H6.237z"/>
+                  </svg>
+                  </span>
+              </div>
+              <div class="info-entry">
+                <span>CVV: </span>{{voucher.cvv}}
+                <span class="copy-svg">
+                  <svg width="20" height="20" viewBox="0 0 20 20">
+                    <path d="M14.71 2H8.497C7.688 2 7 2.557 7 3.367V4h1v-.633C8 3.109 8.239 3 8.497 3h6.213c.258 0 .29.109.29.367v9.729c0 .258-.032.904-.29.904H14v1h.71c.81 0 1.29-1.095 1.29-1.904V3.367C16 2.557 15.52 2 14.71 2z"/>
+                    <path d="M12.27 17.668H5.728c-.852 0-1.545-.694-1.545-1.546V5.878c0-.852.693-1.545 1.545-1.545h6.542c.852 0 1.545.693 1.545 1.545v10.243c.001.853-.692 1.547-1.545 1.547zM5.728 5.386c-.271 0-.493.221-.493.493v10.243c0 .272.221.494.493.494h6.542c.271 0 .493-.221.493-.494V5.878c0-.271-.221-.493-.493-.493H5.728z"/>
+                    <path d="M6.237 7.599h5.526v.502H6.237zm0 1.05h5.526v.502H6.237zm0 1.05h5.526v.502H6.237zm0 1.05h5.526v.502H6.237zm0 1.051h5.526v.502H6.237zm0 1.05h5.526v.502H6.237zm0 1.05h5.526v.502H6.237z"/>
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="voucher-info-expanded" ng-show="chosenVoucher.selected.sid===voucher.sid">
+            <div class="info-entry"><span>Created: </span>{{voucher.created}}</div>
+            <div class="info-entry"><span>ID: </span>{{voucher.id}}</div>
+          </div>
+        </div>
+        <div class="edit-voucher">
+          <!--<img ng-src="./images/edit.svg" onerror="angular.element(this).scope().imgError(this)"/>-->
+          <svg width="20" height="20"  viewBox="0 0 40 40">
+            <g fill="none" fill-rule="evenodd">
+              <path d="M-15-14h70v70h-70z"/>
+              <path fill="#707070" d="M38 40H8l1.39534884-2H38v2"/>
+              <g>
+                <path stroke-width="2" d="M9.18580805 34.5379724L2 38l3.5338731-8.3508812"/>
+                <path stroke-width="2" d="M4.5727907 30.9906512L34.5806512 1.4121628l4.007186 4.00718604L8.57911628 34.9969767"/>
+                <path d="M36.1234651 7.0232558l-4.007186-4.00718603M9.4395814 34.1365116L5.4332558 30.130186"/>
+              </g>
+            </g>
+          </svg>
+        </div>
+        <div class="face-value">{{voucher.fVal}}{{voucher.currency}}</div>
+        <div class="ask-price">
+          <div class="price-val">{{voucher.fVal-voucher.discount}}{{voucher.currency}}</div>
+          <div class="discount">({{calcDiscount(voucher.fVal,voucher.discount)}}%)</div>
+        </div>
+        <div class="seller-name">{{voucher.seller}}</div>
+        <div class="action-btns">
+          <div class="action-btn">Approve</div>
+          <div class="action-btn">Decline</div>
+        </div>
+      </label>
+    </div>
+  </div>
+</div>
+</body>
+</html>

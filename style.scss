@@ -1,0 +1,151 @@
+body{
+  margin: 0;
+  width: 100%;
+  .back-office-page{
+    display: flex;
+    flex-direction: column;
+    .page-header{
+      display: flex;
+      align-items: center;
+      background: #3A9AF1;
+      color: #FFFFFF;
+      height: 38px;
+      width: 100%;
+      font-size: 18px;
+      font-weight: 600;
+      user-select: none;
+      .header-info{
+        margin: 0 310px 0 50px;
+      }
+      .header-AP{
+        margin: 0 52px 0 63px
+      }
+      .header-info, .header-FV, .header-seller{
+        cursor: pointer;
+      }
+    }
+    .content-container{
+      display: flex;
+      flex-direction: column;
+      .table-item{
+        padding: 15px 0;
+        font-size: 16px;
+        &:nth-child(2n){
+          background: #F9F9F9;
+        }
+        input[type="checkbox"] {
+          display: none;
+        }
+        .voucher-row{
+          display: flex;
+          align-items: flex-start;
+          justify-content: flex-start;
+          cursor: pointer;
+          user-select: none;
+          height: 55px;
+          transition: height .5s ease-out;
+          .voucher-info{
+            display: flex;
+            flex-direction: column;
+            height: inherit;
+            justify-content: space-between;
+            .voucher-info-short{
+              display: flex;
+              align-items: flex-start;
+              .img-wrapper{
+                width:45px;
+                height:45px;
+                margin: 0 15px 0 40px;
+                img{
+                  width: 45px;
+                  height: 45px;
+                  object-fit: cover;
+                }
+              }
+              .voucher-info-text {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                height: 55px;
+                justify-content: space-between;
+                .info-entry{
+                  display: flex;
+                  font-size: 14px;
+                  span{
+                    color: #9C9C9C;
+                    margin: 0 2px 0 0;
+                  }
+                  .copy-svg{
+                    display: flex;
+                    width: 20px;
+                    height: 14px;
+                    margin: 0 0 0 4px;
+                    cursor: pointer;
+                    &:hover{
+                      stroke: #dbdbdb;
+                    }
+                  }
+                }
+              }
+            }
+            .voucher-info-expanded{
+              display: flex;
+              flex-direction: column;
+              margin: 0 0 0 40px;
+              .info-entry {
+                display: flex;
+                font-size: 14px;
+                span {
+                  color: #9C9C9C;
+                  margin: 0 2px 0 0;
+                }
+              }
+            }
+          }
+          .edit-voucher{
+            width: 20px;
+            margin: 0 80px;
+            stroke: #707070;
+            cursor: pointer;
+            &:hover{
+              stroke: #000000;
+            }
+          }
+          .ask-price{
+            margin: 0 83px 0 55px;
+            width: 60px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          }
+          .action-btns{
+            position: absolute;
+            display: flex;
+            align-items: center;
+            right: 10px;
+            height: inherit;
+            .action-btn{
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              cursor: pointer;
+              width: 70px;
+              height: 50px;
+              color: #FFFFFF;
+              font-weight: 600;
+              margin: 0 5px;
+              background: #FC2355;
+              &:nth-child(1){
+                background: #3A9AF1;
+              }
+            }
+          }
+          &.expanded{
+            height: 93px;
+            transition: height .5s ease-in;
+          }
+        }
+      }
+    }
+  }
+}
