@@ -105,7 +105,7 @@ angular.module('backOfficeApp', ['ngAnimate', 'ui.bootstrap'])
       {sid: 11,brandImg: 'https://unsplash.it/45/45/?random='+randomNumber(2), brandName: 'Bosch', sn: randomNumber(16), cvv: randomNumber(5), fVal: randomNumber(3).toString(), askPrice: -1, discount: randomNumber(2), seller: randomName(), prevOwner: randomName(), created: randomDate(), id: randomId(), notes: '', currency: '€', pVoucher: false, bID: randomBulkId(), invoice: Math.random().toString(10).substring(2,7), orderNum: randomNumber(3), status: 'Undecided'},
       {sid: 12,brandImg: 'https://unsplash.it/45/45/?random='+randomNumber(2), brandName: 'Nikon', sn: randomNumber(16), cvv: randomNumber(5), fVal: randomNumber(3).toString(), askPrice: -1, discount: randomNumber(2), seller: randomName(), prevOwner: randomName(), created: randomDate(), id: randomId(), notes: '', currency: '$', pVoucher: true, bID: randomBulkId(), invoice: Math.random().toString(10).substring(2,7), orderNum: randomNumber(3), status: 'Undecided'}
     ];
-    console.log($scope.voucherList);
+    
     var copyList = [];
     $scope.chosenVoucher = {};
     $scope.findSeller = {};
@@ -167,6 +167,7 @@ angular.module('backOfficeApp', ['ngAnimate', 'ui.bootstrap'])
   
   .controller('editVoucherCtrl', ['$scope', '$uibModalInstance', 'editedItem',
     function($scope, $uibModalInstance, editedItem){
+    
       $scope.vouch = angular.copy(editedItem);
       $scope.vouch.status === 'Undecided' ? $scope.vouch.status = 'Active' : $scope.vouch.status;
       
@@ -181,6 +182,7 @@ angular.module('backOfficeApp', ['ngAnimate', 'ui.bootstrap'])
     }
   ])
   
+  //------- Copy to clipboard -------//
   .service('ngCopy', ['$window', function ($window) {
     var body = angular.element($window.document.body);
     var textarea = angular.element('<textarea/>');
@@ -213,6 +215,7 @@ angular.module('backOfficeApp', ['ngAnimate', 'ui.bootstrap'])
       }
     }
   }])
+  //------- End of copy to clipboard -------//
   
   .directive('numbersOnly', function(){
     return {
