@@ -91,19 +91,25 @@ angular.module('backOfficeApp', ['ngAnimate', 'ui.bootstrap'])
     //--------- END OF HELPER FUNCTIONS TO GENERATE DATA ---------//
     
     $scope.voucherList = [
-      {sid: 0,brandImg: 'https://unsplash.it/45/45/?random='+randomNumber(2), brandName: 'Nike', sn: randomNumber(16), cvv: randomNumber(5), fVal: randomNumber(3).toString(), askPrice: -1, discount: randomNumber(2), seller: randomName(), created: randomDate(), id: randomId(), notes: '', currency: '$', pVoucher: false, bID: randomBulkId(), invoice: Math.random().toString(10).substring(2,7), orderNum: randomNumber(3), status: 'Undecided'},
-      {sid: 1,brandImg: 'https://unsplash.it/45/45/?random='+randomNumber(2), brandName: 'Ford', sn: randomNumber(16), cvv: randomNumber(5), fVal: randomNumber(3).toString(), askPrice: -1, discount: randomNumber(2), seller: randomName(), created: randomDate(), id: randomId(), notes: '', currency: '£', pVoucher: false, bID: randomBulkId(), invoice: Math.random().toString(10).substring(2,7), orderNum: randomNumber(3), status: 'Undecided'},
-      {sid: 2,brandImg: 'https://unsplash.it/45/45/?random='+randomNumber(2), brandName: 'Apple', sn: randomNumber(16), cvv: randomNumber(5), fVal: randomNumber(3).toString(), askPrice: -1, discount: randomNumber(2), seller: randomName(), created: randomDate(), id: randomId(), notes: '', currency: '€', pVoucher: false, bID: randomBulkId(), invoice: Math.random().toString(10).substring(2,7), orderNum: randomNumber(3), status: 'Undecided'},
-      {sid: 3,brandImg: 'https://unsplash.it/45/45/?random='+randomNumber(2), brandName: 'Levi\'s', sn: randomNumber(16), cvv: randomNumber(5), fVal: randomNumber(3).toString(), askPrice: -1, discount: randomNumber(2), seller: randomName(), created: randomDate(), id: randomId(), notes: '', currency: '$', pVoucher: false, bID: randomBulkId(), invoice: Math.random().toString(10).substring(2,7), orderNum: randomNumber(3), status: 'Undecided'},
-      {sid: 4,brandImg: 'https://unsplash.it/45/45/?random='+randomNumber(2), brandName: 'IBM', sn: randomNumber(16), cvv: randomNumber(5), fVal: randomNumber(3).toString(), askPrice: -1, discount: randomNumber(2), seller: randomName(), created: randomDate(), id: randomId(), notes: '', currency: '£', pVoucher: false, bID: randomBulkId(), invoice: Math.random().toString(10).substring(2,7), orderNum: randomNumber(3), status: 'Undecided'},
-      {sid: 5,brandImg: 'https://unsplash.it/45/45/?random='+randomNumber(2), brandName: 'Microsoft', sn: randomNumber(16), cvv: randomNumber(5), fVal: randomNumber(3).toString(), askPrice: -1, discount: randomNumber(2), seller: randomName(), created: randomDate(), id: randomId(), notes: '', currency: '€', pVoucher: false, bID: randomBulkId(), invoice: Math.random().toString(10).substring(2,7), orderNum: randomNumber(3), status: 'Undecided'},
-      {sid: 6,brandImg: 'https://unsplash.it/45/45/?random='+randomNumber(2), brandName: 'Adidas', sn: randomNumber(16), cvv: randomNumber(5), fVal: randomNumber(3).toString(), askPrice: -1, discount: randomNumber(2), seller: randomName(), created: randomDate(), id: randomId(), notes: '', currency: '$', pVoucher: false, bID: randomBulkId(), invoice: Math.random().toString(10).substring(2,7), orderNum: randomNumber(3), status: 'Undecided'},
-      {sid: 7,brandImg: 'https://unsplash.it/45/45/?random='+randomNumber(2), brandName: 'Rolex', sn: randomNumber(16), cvv: randomNumber(5), fVal: randomNumber(3).toString(), askPrice: -1, discount: randomNumber(2), seller: randomName(), created: randomDate(), id: randomId(), notes: '', currency: '£', pVoucher: false, bID: randomBulkId(), invoice: Math.random().toString(10).substring(2,7), orderNum: randomNumber(3), status: 'Undecided'},
-      {sid: 8,brandImg: 'https://unsplash.it/45/45/?random='+randomNumber(2), brandName: 'HP', sn: randomNumber(16), cvv: randomNumber(5), fVal: randomNumber(3).toString(), askPrice: -1, discount: randomNumber(2), seller: randomName(), created: randomDate(), id: randomId(), notes: '', currency: '€', pVoucher: false, bID: randomBulkId(), invoice: Math.random().toString(10).substring(2,7), orderNum: randomNumber(3), status: 'Undecided'},
-      {sid: 9,brandImg: 'https://unsplash.it/45/45/?random='+randomNumber(2), brandName: 'Nikon', sn: randomNumber(16), cvv: randomNumber(5), fVal: randomNumber(3).toString(), askPrice: -1, discount: randomNumber(2), seller: randomName(), created: randomDate(), id: randomId(), notes: '', currency: '$', pVoucher: true, bID: randomBulkId(), invoice: Math.random().toString(10).substring(2,7), orderNum: randomNumber(3), status: 'Undecided'}
+      {sid: 0,brandImg: 'https://unsplash.it/45/45/?random='+randomNumber(2), brandName: 'Nike', sn: randomNumber(16), cvv: randomNumber(5), fVal: randomNumber(3).toString(), askPrice: -1, discount: randomNumber(2), seller: randomName(), prevOwner: randomName(), created: randomDate(), id: randomId(), notes: '', currency: '$', pVoucher: false, bID: randomBulkId(), invoice: Math.random().toString(10).substring(2,7), orderNum: randomNumber(3), status: 'Undecided'},
+      {sid: 1,brandImg: 'https://unsplash.it/45/45/?random='+randomNumber(2), brandName: 'Ford', sn: randomNumber(16), cvv: randomNumber(5), fVal: randomNumber(3).toString(), askPrice: -1, discount: randomNumber(2), seller: randomName(), prevOwner: randomName(), created: randomDate(), id: randomId(), notes: '', currency: '£', pVoucher: false, bID: randomBulkId(), invoice: Math.random().toString(10).substring(2,7), orderNum: randomNumber(3), status: 'Undecided'},
+      {sid: 2,brandImg: 'https://unsplash.it/45/45/?random='+randomNumber(2), brandName: 'Apple', sn: randomNumber(16), cvv: randomNumber(5), fVal: randomNumber(3).toString(), askPrice: -1, discount: randomNumber(2), seller: randomName(), prevOwner: randomName(), created: randomDate(), id: randomId(), notes: '', currency: '€', pVoucher: false, bID: randomBulkId(), invoice: Math.random().toString(10).substring(2,7), orderNum: randomNumber(3), status: 'Undecided'},
+      {sid: 3,brandImg: 'https://unsplash.it/45/45/?random='+randomNumber(2), brandName: 'Levi\'s', sn: randomNumber(16), cvv: randomNumber(5), fVal: randomNumber(3).toString(), askPrice: -1, discount: randomNumber(2), seller: randomName(), prevOwner: randomName(), created: randomDate(), id: randomId(), notes: '', currency: '$', pVoucher: false, bID: randomBulkId(), invoice: Math.random().toString(10).substring(2,7), orderNum: randomNumber(3), status: 'Undecided'},
+      {sid: 4,brandImg: 'https://unsplash.it/45/45/?random='+randomNumber(2), brandName: 'IBM', sn: randomNumber(16), cvv: randomNumber(5), fVal: randomNumber(3).toString(), askPrice: -1, discount: randomNumber(2), seller: randomName(), prevOwner: randomName(), created: randomDate(), id: randomId(), notes: '', currency: '£', pVoucher: false, bID: randomBulkId(), invoice: Math.random().toString(10).substring(2,7), orderNum: randomNumber(3), status: 'Undecided'},
+      {sid: 5,brandImg: 'https://unsplash.it/45/45/?random='+randomNumber(2), brandName: 'Microsoft', sn: randomNumber(16), cvv: randomNumber(5), fVal: randomNumber(3).toString(), askPrice: -1, discount: randomNumber(2), seller: randomName(), prevOwner: randomName(), created: randomDate(), id: randomId(), notes: '', currency: '€', pVoucher: false, bID: randomBulkId(), invoice: Math.random().toString(10).substring(2,7), orderNum: randomNumber(3), status: 'Undecided'},
+      {sid: 6,brandImg: 'https://unsplash.it/45/45/?random='+randomNumber(2), brandName: 'Adidas', sn: randomNumber(16), cvv: randomNumber(5), fVal: randomNumber(3).toString(), askPrice: -1, discount: randomNumber(2), seller: randomName(), prevOwner: randomName(), created: randomDate(), id: randomId(), notes: '', currency: '$', pVoucher: false, bID: randomBulkId(), invoice: Math.random().toString(10).substring(2,7), orderNum: randomNumber(3), status: 'Undecided'},
+      {sid: 7,brandImg: 'https://unsplash.it/45/45/?random='+randomNumber(2), brandName: 'Rolex', sn: randomNumber(16), cvv: randomNumber(5), fVal: randomNumber(3).toString(), askPrice: -1, discount: randomNumber(2), seller: randomName(), prevOwner: randomName(), created: randomDate(), id: randomId(), notes: '', currency: '£', pVoucher: false, bID: randomBulkId(), invoice: Math.random().toString(10).substring(2,7), orderNum: randomNumber(3), status: 'Undecided'},
+      {sid: 8,brandImg: 'https://unsplash.it/45/45/?random='+randomNumber(2), brandName: 'HP', sn: randomNumber(16), cvv: randomNumber(5), fVal: randomNumber(3).toString(), askPrice: -1, discount: randomNumber(2), seller: randomName(), prevOwner: randomName(), created: randomDate(), id: randomId(), notes: '', currency: '€', pVoucher: false, bID: randomBulkId(), invoice: Math.random().toString(10).substring(2,7), orderNum: randomNumber(3), status: 'Undecided'},
+      {sid: 9,brandImg: 'https://unsplash.it/45/45/?random='+randomNumber(2), brandName: 'Calvin Klein', sn: randomNumber(16), cvv: randomNumber(5), fVal: randomNumber(3).toString(), askPrice: -1, discount: randomNumber(2), seller: randomName(), prevOwner: randomName(), created: randomDate(), id: randomId(), notes: '', currency: '$', pVoucher: false, bID: randomBulkId(), invoice: Math.random().toString(10).substring(2,7), orderNum: randomNumber(3), status: 'Undecided'},
+      {sid: 10,brandImg: 'https://unsplash.it/45/45/?random='+randomNumber(2), brandName: 'Yamaha', sn: randomNumber(16), cvv: randomNumber(5), fVal: randomNumber(3).toString(), askPrice: -1, discount: randomNumber(2), seller: randomName(), prevOwner: randomName(), created: randomDate(), id: randomId(), notes: '', currency: '£', pVoucher: false, bID: randomBulkId(), invoice: Math.random().toString(10).substring(2,7), orderNum: randomNumber(3), status: 'Undecided'},
+      {sid: 11,brandImg: 'https://unsplash.it/45/45/?random='+randomNumber(2), brandName: 'Bosch', sn: randomNumber(16), cvv: randomNumber(5), fVal: randomNumber(3).toString(), askPrice: -1, discount: randomNumber(2), seller: randomName(), prevOwner: randomName(), created: randomDate(), id: randomId(), notes: '', currency: '€', pVoucher: false, bID: randomBulkId(), invoice: Math.random().toString(10).substring(2,7), orderNum: randomNumber(3), status: 'Undecided'},
+      {sid: 12,brandImg: 'https://unsplash.it/45/45/?random='+randomNumber(2), brandName: 'Nikon', sn: randomNumber(16), cvv: randomNumber(5), fVal: randomNumber(3).toString(), askPrice: -1, discount: randomNumber(2), seller: randomName(), prevOwner: randomName(), created: randomDate(), id: randomId(), notes: '', currency: '$', pVoucher: true, bID: randomBulkId(), invoice: Math.random().toString(10).substring(2,7), orderNum: randomNumber(3), status: 'Undecided'}
     ];
-    
+    console.log($scope.voucherList);
+    var copyList = [];
     $scope.chosenVoucher = {};
+    $scope.findSeller = {};
+    $scope.statusFilter = 'all';
     
     $scope.editVoucher = function(voucher,e){
       e.preventDefault();
@@ -118,7 +124,9 @@ angular.module('backOfficeApp', ['ngAnimate', 'ui.bootstrap'])
         }
       });
       edited.result.then(function(res){
-        $scope.voucherList[res.sid] = res;
+        if ($scope.voucherList.length===1)
+          $scope.voucherList[0] = res;
+        else $scope.voucherList[res.sid] = res;
       });
     };
     
@@ -129,7 +137,31 @@ angular.module('backOfficeApp', ['ngAnimate', 'ui.bootstrap'])
     $scope.action = function(vouch, val, e){
       e.preventDefault();
       vouch.status=val;
-    }
+    };
+    
+    $scope.countStatus = function(status){
+      var count = 0;
+      $scope.voucherList.forEach(function(item){
+        if (item.status === status)
+          count++;
+      });
+      return count;
+    };
+    
+    $scope.onSelect = function(found){
+      $scope.findSeller.found = found.seller;
+      copyList = angular.copy($scope.voucherList);
+      $scope.voucherList = [];
+      $scope.voucherList.push(found);
+    };
+    
+    $scope.clearSearch = function(){
+      if ($scope.voucherList.length===1){
+        $scope.findSeller.found = '';
+        copyList[$scope.voucherList[0].sid] = $scope.voucherList[0];
+        $scope.voucherList = angular.copy(copyList);
+      }
+    };
     
   }])
   
@@ -139,6 +171,7 @@ angular.module('backOfficeApp', ['ngAnimate', 'ui.bootstrap'])
       $scope.vouch.status === 'Undecided' ? $scope.vouch.status = 'Active' : $scope.vouch.status;
       
       $scope.approve = function () {
+        $scope.vouch.status === 'Active' ? $scope.vouch.status = 'Undecided' : $scope.vouch.status;
         $uibModalInstance.close($scope.vouch);
       };
       

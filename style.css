@@ -21,10 +21,34 @@ body {
         margin: 0 310px 0 50px; }
       body .back-office-page .page-header .header-AP {
         margin: 0 52px 0 63px; }
+      body .back-office-page .page-header .header-seller {
+        display: flex;
+        align-items: center; }
+        body .back-office-page .page-header .header-seller .seller-filter {
+          color: black;
+          font-size: 14px;
+          font-weight: 400;
+          border: none;
+          padding: 0 5px;
+          margin: 0 0 0 5px; }
+        body .back-office-page .page-header .header-seller .clear-search {
+          font-size: 12px;
+          font-weight: 300;
+          color: white;
+          margin: 0 0 0 5px; }
       body .back-office-page .page-header .header-status {
         position: absolute;
-        right: 62px;
+        right: 17px;
         display: flex; }
+        body .back-office-page .page-header .header-status .status-filter {
+          font-size: 14px;
+          font-weight: 400;
+          color: black;
+          background: white;
+          border: none;
+          border-radius: 4px;
+          width: 147px;
+          margin: 0 0 0 5px; }
       body .back-office-page .page-header .header-info, body .back-office-page .page-header .header-FV, body .back-office-page .page-header .header-seller, body .back-office-page .page-header .header-status {
         cursor: pointer; }
     body .back-office-page .content-container {
