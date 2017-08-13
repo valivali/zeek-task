@@ -168,16 +168,19 @@ angular.module('backOfficeApp', ['ngAnimate', 'ui.bootstrap'])
   .controller('editVoucherCtrl', ['$scope', '$uibModalInstance', 'editedItem',
     function($scope, $uibModalInstance, editedItem){
     
-      $scope.vouch = angular.copy(editedItem);
+      // $scope.vouch = angular.copy(editedItem);
+      $scope.vouch = editedItem;
       $scope.vouch.status === 'Undecided' ? $scope.vouch.status = 'Active' : $scope.vouch.status;
       
       $scope.approve = function () {
-        $scope.vouch.status === 'Active' ? $scope.vouch.status = 'Undecided' : $scope.vouch.status;
-        $uibModalInstance.close($scope.vouch);
+        // $scope.vouch.status === 'Active' ? $scope.vouch.status = 'Undecided' : $scope.vouch.status;
+        // $uibModalInstance.close($scope.vouch);
+        $scope.vouch.status = 'Approved';
       };
       
       $scope.decline = function () {
-        $uibModalInstance.dismiss();
+        // $uibModalInstance.dismiss();
+        $scope.vouch.status = 'Declined';
       };
     }
   ])
